@@ -1,0 +1,80 @@
+{
+  "epoch": 191,
+  "metrics": {
+    "ACC": 0.9011406844106464,
+    "F1_weighted": 0.9055634965297202,
+    "F1_macro": 0.8815130871202962
+  },
+  "data_folder": "/storage/24721519_wk/WKzzModel0/BRCA",
+  "data_folder_name": "BRCA",
+  "view_list": [
+    1,
+    2,
+    3
+  ],
+  "num_class": 5,
+  "adj_parameter": 10,
+  "dim_list": [
+    1000,
+    1000,
+    503
+  ],
+  "dim_he_list": [
+    200
+  ],
+  "recon_weight": 0.5,
+  "use_confidence": true,
+  "fusion_backend": "gat",
+  "shared_module_cfg": {
+    "align_mode": "linear",
+    "dropout": 0.1,
+    "use_sem_loss": true,
+    "use_mmd_loss": true,
+    "mmd_kernel_bandwidth": 1.0,
+    "latent_dim": 200
+  },
+  "fusion_cfg": {
+    "graph_mode": "ring",
+    "graph_mode_options": [
+      "fully_connected",
+      "bipartite",
+      "star",
+      "spec_shared_only",
+      "spec_shared_plus_specific",
+      "paired_chain",
+      "spec_shared_plus_shared",
+      "shared_clique",
+      "ring",
+      "cycle",
+      "hierarchical",
+      "random_k",
+      "clustered_specific",
+      "shared_star_plus_specific",
+      "two_level_random",
+      "temporal_bidir",
+      "complete_shared_bridge",
+      "attention_pruned",
+      "shared_mean_fc",
+      "shared_mean_star"
+    ],
+    "num_heads": 1,
+    "num_layers": 1,
+    "readout": "flatten",
+    "random_k_neighbors": 3,
+    "random_k_seed": 97
+  },
+  "shared_loss_weights": {
+    "sem": 0.1,
+    "mmd": 0.4,
+    "shared_cls": 0.0
+  },
+  "use_specific_branch": true,
+  "use_specific_features": true,
+  "min_acc_to_save": 0.897,
+  "metric_priority": [
+    "ACC",
+    "F1_weighted",
+    "F1_macro"
+  ],
+  "metric_compare_decimals": 3
+}
