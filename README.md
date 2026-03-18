@@ -8,7 +8,6 @@ This repository contains the official implementation of the **CMIG** framework. 
 - `models.py` : Contains the core components, including the CMIG (GAT-based) encoder, Graph Convolution structures and TCP classifiers.
 - `train_test_GCN.py` : Main pipeline definition executing epoch looping, GAT fusion invocation, evaluations (ACC, F1, AUC), and checkpoint loading.
 - `utils.py` : Provides helpful utilities for data preprocessing (feature standardizations, adj matrix creations via distances, etc.).
-- `runseed.py` : Specialized runner to perform repeated execution arrays with custom seeds to gather and evaluate variance/summaries across experiments `(python runseed.py --seeds 42 95 127)`.
 - `checkpoints/` : Used for storing state block dictionaries weights `.pth` of multiple runs per dataset.
 
 ---
@@ -69,15 +68,3 @@ python main.py
 ```
 
 It dynamically looks for `.pth` structures like: `E1.pth`, `E2.pth`, `E3.pth`, `C1.pth`, `C2.pth`, `C3.pth`, `Fus.pth`.
-
-### Batch execution scripts (`runseed.py`)
-To test multiple splits, control seeds rigorously out the box from arguments without ever modifying files manually:
-
-```bash
-# Run with customized seeds:
-python runseed.py --seeds 97 98 99
-
-# OR run purely 5 sequential trials starting from 97:
-python runseed.py --num-seeds 5 --base-seed 97
-```
-This module collects JSON outputs natively onto `run_seed_results.json` mapping means and variance values comprehensively across models.
