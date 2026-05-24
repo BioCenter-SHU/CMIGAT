@@ -402,16 +402,15 @@ class SharedLatentEncoder(nn.Module):
             "losses": losses,
         }
 
+        
     def _semantic_alignment(self, mu_list, logvar_list):
         pair_losses = []
-        var_list = [torch.exp(logvar) for logvar in logvar_list]
         for i, j in itertools.combinations(range(len(mu_list)), 2):
             pair_losses.append((mu_list[i] - mu_list[j]).pow(2).mean())
-            pair_losses.append((var_list[i] - var_list[j]).pow(2).mean())
         if not pair_losses:
             return torch.tensor(0.0, device=mu_list[0].device)
         return torch.stack(pair_losses).mean()
-
+    
     def _pairwise_mmd(self, z_list):
         pair_losses = []
         for i, j in itertools.combinations(range(len(z_list)), 2):
