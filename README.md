@@ -26,10 +26,10 @@ CMIGAT effectively addresses the challenges of cross-omics shared representation
 The code runs properly in a Python 3.10 environment. Below is a detailed, minimal guidance on replicating the Conda environment used for running `main.py` optimally.
 
 ### 1. Create Conda Environment
-Create your virtual setting named `mohgcn310`:
+Create your virtual setting named `cmigat310`:
 ```bash
-conda create -n mohgcn310 python=3.10
-conda activate mohgcn310
+conda create -n cmigat310 python=3.10
+conda activate cmigat310
 ```
 
 ### 2. Install Requirements

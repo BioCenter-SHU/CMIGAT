@@ -321,7 +321,7 @@ def train_test(data_folder, view_list, num_class,
     dim_hvcdn = pow(num_class, num_view)
 
     if data_folder == 'BRCA':
-        adj_parameter = 2
+        adj_parameter = 10
         dim_he_list = [200]
     data_tr_list, data_trte_list, trte_idx, labels_trte = prepare_trte_data(data_folder, view_list)
     labels_tr_tensor = torch.LongTensor(labels_trte[trte_idx["tr"]])
