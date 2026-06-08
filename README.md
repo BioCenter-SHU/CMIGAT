@@ -8,7 +8,7 @@ Omics-specific features are first extracted via graph convolutional encoders wit
 Extensive experiments on public benchmarks (https://github.com/txWang/MOGONET) demonstrate that CMIGAT consistently achieves state-of-the-art performance. Ablation studies confirm the necessity and complementarity of each module. Shapley-based biomarker analysis on BRCA identifies biologically meaningful features closely associated with cancer-related pathways.
 CMIGAT effectively addresses the challenges of cross-omics shared representation extraction and specific-shared feature combination , achieving superior classification and interpretable biomarker identification. The framework is broadly applicable to multi-omics-driven precision diagnosis, cancer subtype classification, and clinical biomarker discovery.
 
-<img width="2671" height="1731" alt="Figure_1" src="https://github.com/user-attachments/assets/33ffc818-0e51-4eb5-a353-6c4dd6714de5" />
+<img width="2671" height="1731" alt="Figure_1" src="https://github.com/user-attachments/assets/6142cdf8-091e-4911-b654-cb0b8d18c143" />
 
 ## 📂 Project Structure
 
