@@ -1,4 +1,3 @@
-"""Training and testing pipeline using GCN encoders + GAT fusion."""
 import os
 import numpy as np
 from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
@@ -66,7 +65,6 @@ def _update_best(best_metrics, metrics, epoch_label):
 
 
 def _is_better_overall(metrics, current_best, num_class):
-    """ACC 优先，其次 F1/F1_weighted，再次 AUC/F1_macro，比较小数点后三位。"""
     def r3(v): return round(v, 3)
     order = ["ACC", "F1", "AUC"] if num_class == 2 else ["ACC", "F1_weighted", "F1_macro"]
     if current_best is None:
@@ -333,7 +331,6 @@ def train_test(data_folder, view_list, num_class,
         labels_tr_tensor = labels_tr_tensor.cuda()
         onehot_labels_tr_tensor = onehot_labels_tr_tensor.cuda()
         sample_weight_tr = sample_weight_tr.cuda()
-    # 原 gen_trte_adj_mat 返回 edge_index；GCN 需要稀疏邻接矩阵，故先生成 edge_index，再转 sparse。
     adj_tr_edge, adj_te_edge = gen_trte_adj_mat(data_tr_list, data_trte_list, trte_idx, adj_parameter)
     adj_tr_list, adj_te_list = [], []
     for edge_index in adj_tr_edge:
