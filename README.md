@@ -2,13 +2,18 @@
 
 ## Abstract
 
+\noindent\textbf{Objective:}
 With the rapid development of high-throughput sequencing technology, integrating multi-omics data has become a necessary means to elucidate complex disease mechanisms and achieve precision diagnosis. However, existing methods still face two major challenges: (1) the difficulty of effectively and accurately extracting cross-omics shared representations; and (2) the lack of effective strategies to combine specific and shared representations.
 To address these challenges, we propose the Cyclic Modality-Interaction Graph Attention Network (CMIGAT), which unifies specificity extraction, shared alignment, and topological fusion in an end-to-end framework.
-Omics-specific features are first extracted via graph convolutional encoders with reconstruction regularization and confidence learning. We then extract shared features directly from raw omics data to minimize the influence of modality-specific encoders that are used for individual omics representation, and apply dual-alignment constraints (Maximum Mean Discrepancy and semantic consistency) to ensure cross-modal distributional and semantic agreement. For multi-omics integration, we propose the Cyclic Modality-Interaction Graph Integration Module (CMIGM). In this module, a Cyclic Modality-Interaction Graph (CMIG) is designed to integrate the shared and specific features of each omics, and a Graph Attention Network (GAT) is used to execute cross-modal information propagation, whereby effective information interaction and robust feature aggregation are achieved.
-Extensive experiments on public benchmarks (https://github.com/txWang/MOGONET) demonstrate that CMIGAT consistently achieves state-of-the-art performance. Ablation studies confirm the necessity and complementarity of each module. Shapley-based biomarker analysis on BRCA identifies biologically meaningful features closely associated with cancer-related pathways.
-CMIGAT effectively addresses the challenges of cross-omics shared representation extraction and specific-shared feature combination , achieving superior classification and interpretable biomarker identification. The framework is broadly applicable to multi-omics-driven precision diagnosis, cancer subtype classification, and clinical biomarker discovery.
 
-<img width="2671" height="1731" alt="Figure_1" src="https://github.com/user-attachments/assets/6142cdf8-091e-4911-b654-cb0b8d18c143" />
+\noindent\textbf{Methods:}
+CMIGAT comprises three coupled modules. Omics-specific features are first extracted via graph convolutional encoders with reconstruction regularization and confidence learning. 
+We then extract shared features directly from the raw omics inputs through a lightweight linear alignment that bypasses the deep modality-specific encoders, 
+and apply dual-alignment constraints (Maximum Mean Discrepancy and semantic consistency) to ensure cross-modal distributional and semantic agreement. For multi-omics integration, we propose the Cyclic Modality-Interaction Graph Integration Module (CMIGM). In this module, a Cyclic Modality-Interaction Graph (CMIG) is designed to integrate the shared and specific features of each omics, and a Graph Attention Network (GAT) is used to execute cross-modal information propagation, whereby effective information interaction and robust feature aggregation are achieved.
+
+
+<img width="2671" height="1732" alt="Figure_1" src="https://github.com/user-attachments/assets/e02564fc-1863-4014-a360-82c7e4426903" />
+
 
 ## 📂 Project Structure
 
