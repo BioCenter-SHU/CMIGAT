@@ -18,8 +18,8 @@ from utils import (
 
 # CUDA setup
 if torch.cuda.is_available():
-    torch.cuda.set_device(0)
-    device = torch.device("cuda:0")
+    torch.cuda.set_device(1)
+    device = torch.device("cuda:1")
     cuda = True
 else:
     device = torch.device("cpu")
