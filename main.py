@@ -24,7 +24,7 @@ def run_experiment(
 if __name__ == "__main__":
     data_folder = 'BRCA'
     view_list = [1, 2, 3]
-    testonly = False
+    testonly = True
 
     schedule_cfg = {
         "num_epoch_pretrain": 300,
